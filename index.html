@@ -7,13 +7,14 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     :root {
-      --bg-color: #121211;
+      --bg-color: #121212;
       --text-color: #f0f0f0;
       --card-bg: #1e1e1e;
       --accent-color: #4285f4;
       --button-bg: #ff0000;
       --github-bg: #333;
       --facebook-bg: #1877f2;
+      --classroom-bg: #f4b400;
     }
 
     body {
@@ -51,7 +52,7 @@
       text-align: center;
     }
 
-    .subscribe-btn, .facebook-btn, .github-btn {
+    .subscribe-btn, .facebook-btn, .github-btn, .classroom-btn {
       color: white;
       padding: 10px 20px;
       border: none;
@@ -60,11 +61,21 @@
       cursor: pointer;
       margin-top: 10px;
       font-family: 'Comic Sans MS', cursive, sans-serif;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
     }
 
     .subscribe-btn { background-color: var(--button-bg); }
     .facebook-btn { background-color: var(--facebook-bg); }
     .github-btn { background-color: var(--github-bg); }
+    .classroom-btn { background-color: var(--classroom-bg); }
+
+    .subscribe-btn:hover,
+    .facebook-btn:hover,
+    .github-btn:hover,
+    .classroom-btn:hover {
+      transform: scale(1.05);
+    }
 
     .toggle-btn {
       position: fixed;
@@ -148,6 +159,12 @@
 
   <a href="https://facebook.com/learnmathwithtonybm" target="_blank">
     <button class="facebook-btn">Follow on Facebook</button>
+  </a>
+
+  <br><br>
+
+  <a href="https://classroom.google.com/c/NzgyNjIzNzA1MTYy?cjc=pou4ig4b" target="_blank">
+    <button class="classroom-btn">Join on Google Classroom</button>
   </a>
 
   <br><br>
