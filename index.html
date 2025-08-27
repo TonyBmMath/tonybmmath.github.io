@@ -6,6 +6,7 @@
   <title>Learn Math with Tony BM</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
+  <!-- Embed custom Comic Sans font -->
   <style>
     @font-face {
       font-family: 'Capybara';
@@ -140,4 +141,97 @@
     }
 
     .light-mode {
-      --bg-color
+      --bg-color: #f0f4f8;
+      --text-color: #333;
+      --card-bg: white;
+    }
+  </style>
+</head>
+<body>
+
+<button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button>
+
+<header>
+  <h1>Learn Math with Tony BM</h1>
+  <p>The Most Exciting Way to Learn Math! 🎉📚</p>
+</header>
+
+<section class="intro">
+  <h2>Welcome!</h2>
+  <p>We bring math to life with colorful animations, interactive lessons, and exciting challenges. Whether you're a student, parent, or teacher — you're in the right place!</p>
+
+  <a href="https://www.youtube.com/@LearnMathwithTonyBM" target="_blank">
+    <button class="subscribe-btn">Subscribe on YouTube</button>
+  </a>
+
+  <br><br>
+
+  <a href="https://facebook.com/learnmathwithtonybm" target="_blank">
+    <button class="facebook-btn">Follow on Facebook</button>
+  </a>
+
+  <br><br>
+
+  <a href="https://classroom.google.com/c/NzgyNjIzNzA1MTYy?cjc=pou4ig4b" target="_blank">
+    <button class="classroom-btn">Join on Google Classroom</button>
+  </a>
+
+  <br><br>
+
+  <a href="https://github.com/tonybmmath" target="_blank">
+    <button class="github-btn">Visit GitHub</button>
+  </a>
+</section>
+
+<section class="videos">
+  <div class="video-card">
+    <h3>My Videos</h3>
+    <a href="https://www.youtube.com/playlist?list=PLZFxZeygjY3cc1Xbi5wPaWaBPqRBJmdBL" target="_blank">
+      <button class="subscribe-btn">Watch Now</button>
+    </a>
+  </div>
+</section>
+
+<section class="git-section">
+  <h2>GitHub Projects</h2>
+  <ul>
+    <li>🔭 I’m currently working on batch scripts</li>
+    <li>🌱 I’m currently learning PowerShell scripts</li>
+  </ul>
+
+  <h3>My Projects</h3>
+  <table>
+    <tr>
+      <td><a href="https://github.com/TonyBmMath/Math-Quiz" target="_blank">Math-Quiz</a></td>
+      <td><a href="https://github.com/TonyBmMath/Pwsh-GUI-Calculator" target="_blank">Pwsh-GUI-Calculator</a></td>
+      <td><a href="https://github.com/TonyBmMath/TTS-Generator" target="_blank">TTS-Generator</a></td>
+    </tr>
+    <tr>
+      <td>A fun and engaging math quiz free + offline + no ads</td>
+      <td>A GUI Calculator with Windows Forms + PowerShell</td>
+      <td>Text to speech generator free + offline</td>
+    </tr>
+  </table>
+</section>
+
+<section class="downloads">
+  <h2>📥 Download My Script Projects</h2>
+  <p>These tools are free, offline, and ready to use:</p>
+
+  <ul>
+    <li><a href="https://github.com/TonyBmMath/Math-Quiz/releases/download/Math_v2/Math.Quiz.bat" download>🧮 Math Quiz (.bat)</a></li>
+    <li><a href="https://github.com/TonyBmMath/Pwsh-GUI-Calculator/releases/download/maincalc/calc.ps1" download>🧮 PowerShell GUI Calculator (.ps1)</a></li>
+    <li><a href="https://github.com/TonyBmMath/TTS-Generator/releases/download/maintts/tts.vbs" download>🔊 Text-to-Speech Script (.vbs)</a></li>
+  </ul>
+</section>
+
+<script>
+  document.body.classList.remove('light-mode');
+
+  function toggleTheme() {
+    document.body.classList.toggle('light-mode');
+  }
+</script>
+
+</body>
+</html>
