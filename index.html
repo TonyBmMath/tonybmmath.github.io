@@ -262,7 +262,8 @@ fetch(apiURL)
         const videoID = item.id.videoId;
         const embedURL = `https://www.youtube.com/embed/${videoID}`;
         const title = item.snippet.title;
-
+const loadingCard = document.getElementById("latest-video-card");
+if (loadingCard) loadingCard.remove();
         const card = document.createElement("div");
         card.className = "video-card";
         card.innerHTML = `
@@ -281,8 +282,5 @@ fetch(apiURL)
     document.querySelector(".videos").innerHTML += "<p>Unable to load recent videos.</p>";
   });
 </script>
-
-
-
 </body>
 </html>
