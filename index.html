@@ -202,10 +202,10 @@
   </div>
 
   <div class="video-card">
-    <h3>My Videos</h3>
+    <h3>My Playlist</h3>
     <img src="/TonyBm.png" alt="Video Thumbnail" style="width: 100%; max-width: 280px; margin-bottom: 10px; border-radius: 8px;">
     <a href="https://www.youtube.com/playlist?list=PLZFxZeygjY3cc1Xbi5wPaWaBPqRBJmdBL" target="_blank">
-      <button class="subscribe-btn">Watch Now</button>
+      <button class="subscribe-btn">Watch Playlist</button>
     </a>
   </div>
 </section>
@@ -246,7 +246,6 @@
     <li><a href="https://github.com/TonyBmMath/TTS-Generator/releases/download/maintts/tts.vbs" download>🔊 Text-to-Speech Script (.vbs)</a></li>
   </ul>
 </section>
-
 <script>
   document.body.classList.remove('light-mode');
 
@@ -271,32 +270,44 @@
     refMessage.textContent = `👋 Welcome! We're glad you came from ${sourceName}. Enjoy your math journey!`;
     refMessage.style.display = "block";
   }
-</script>
-<script>
-  const channelID = "UCZeRYs-IqPz9uXLvX-m_IZg";
-  const feedURL = `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=${channelID}`;
+
+  const feedURL = "https://www.toptal.com/developers/feed2json/convert?url=https://www.youtube.com/feeds/videos.xml?channel_id=UCZeRYs-IqPz9uXLvX-m_IZg";
 
   fetch(feedURL)
     .then(response => response.json())
     .then(data => {
-      const latestVideo = data.items[0];
-      const videoID = latestVideo.guid.split(":")[2];
-      const embedURL = `https://www.youtube.com/embed/${videoID}`;
+      const videosContainer = document.querySelector(".videos");
+      videosContainer.innerHTML = ""; // Clear loading message
 
-      const latestCard = document.getElementById("latest-video-card");
-      latestCard.innerHTML = `
-        <h3>${latestVideo.title}</h3>
-        <iframe width="100%" height="200" src="${embedURL}" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe>
-        <br><br>
-        <a href="${latestVideo.link}" target="_blank">
-          <button class="subscribe-btn">Watch on YouTube</button>
-        </a>
-      `;
+      data.items.slice(0, 3).forEach(video => {
+        const videoID = video.link.split("/").pop();
+        const embedURL = `https://www.youtube.com/embed/${videoID}`;
+        const pubDate = new Date(video.pubDate);
+        const now = new Date();
+        const isNew = (now - pubDate) / (1000 * 60 * 60 * 24) < 7;
+        const badge = isNew ? `<span style="color: limegreen; font-weight: bold;">🆕 New This Week!</span><br>` : "";
+
+        const card = document.createElement("div");
+        card.className = "video-card";
+        card.innerHTML = `
+          <h3>${video.title}</h3>
+          ${badge}
+          <iframe width="100%" height="200" src="${embedURL}" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe>
+          <br><br>
+          <a href="${video.link}" target="_blank">
+            <button class="subscribe-btn">Watch on YouTube</button>
+          </a>
+        `;
+        videosContainer.appendChild(card);
+      });
     })
     .catch(error => {
-      console.error("Error fetching latest video:", error);
-      document.getElementById("latest-video-card").innerHTML = "<p>Unable to load video at this time.</p>";
+      console.error("Error fetching videos:", error);
+      document.querySelector(".videos").innerHTML = "<p>Unable to load videos at this time.</p>";
     });
 </script>
+
+
+
 </body>
 </html>
