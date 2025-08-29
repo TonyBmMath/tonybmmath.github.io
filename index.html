@@ -159,7 +159,7 @@
 <section class="intro">
   <h2>Welcome!</h2>
   <p>We bring math to life with colorful animations, interactive lessons, and exciting challenges. Whether you're a student, parent, or teacher — you're in the right place!</p>
-
+  <p id="refMessage" style="display: none; font-size: 20px; margin-top: 20px; padding: 15px; background-color: #e0f7fa; border-left: 5px solid #00796b;"></p>
   <a href="https://www.youtube.com/@LearnMathwithTonyBM" target="_blank">
     <button class="subscribe-btn">Subscribe on YouTube</button>
   </a>
@@ -237,6 +237,28 @@
     document.body.classList.toggle('light-mode');
   }
 </script>
+<script>
+  const refSources = {
+    0: "YouTube",
+    1: "Facebook",
+    2: "Google Classroom",
+    3: "GitHub"
+  };
 
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const refCode = params.get('referedfrom');
+
+    if (refCode !== null && refSources.hasOwnProperty(refCode)) {
+      const sourceName = refSources[refCode];
+      const message = `🎉 Thanks for visiting my ${sourceName} page! I’m glad you stopped by. Feel free to explore and let me know what you think.`;
+      const refMessageEl = document.getElementById('refMessage');
+      if (refMessageEl) {
+        refMessageEl.textContent = message;
+        refMessageEl.style.display = 'block';
+      }
+    }
+  });
+</script>
 </body>
 </html>
