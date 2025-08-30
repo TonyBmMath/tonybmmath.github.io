@@ -160,7 +160,7 @@
 </head>
 <body>
 
-<button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button>
+<button class="toggle-btn" onclick="toggleTheme()" id="themeToggleBtn">🌙</button>
 
 <header>
   <h1>Learn Math with Tony BM</h1>
@@ -247,44 +247,76 @@
   </ul>
 </section>
 <script>
-function toggleTheme() {
-  document.documentElement.classList.toggle('light-mode');
-}
+  // Load saved theme on page load
+  window.onload = function () {
+    const savedTheme = localStorage.getItem("theme");
+    const root = document.documentElement;
+    const btn = document.getElementById("themeToggleBtn");
 
-const apiKey = "AIzaSyB8xKr62hw3vfJAaxxI1JmU-g0zg689TVI";
-const channelId = "UCZeRYs-IqPz9uXLvX-m_IZg";
-const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=3`;
+    if (savedTheme === "light") {
+      root.classList.add("light-mode");
+      btn.textContent = "☀️";
+    } else {
+      btn.textContent = "🌙";
+    }
+  };
 
-fetch(apiURL)
-  .then(response => response.json())
-  .then(data => {
-    const videosContainer = document.querySelector(".videos");
+  // Toggle theme and save preference
+  function toggleTheme() {
+    const root = document.documentElement;
+    const btn = document.getElementById("themeToggleBtn");
 
-    data.items
-      .filter(item => item.id.kind === "youtube#video")
-      .forEach(item => {
-        const videoID = item.id.videoId;
-        const embedURL = `https://www.youtube.com/embed/${videoID}`;
-        const title = item.snippet.title;
-const loadingCard = document.getElementById("latest-video-card");
-if (loadingCard) loadingCard.remove();
-        const card = document.createElement("div");
-        card.className = "video-card";
-        card.innerHTML = `
-          <h3>${title}</h3>
-          <iframe width="100%" height="200" src="${embedURL}" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe>
-          <br><br>
-          <a href="https://www.youtube.com/watch?v=${videoID}" target="_blank">
-            <button class="subscribe-btn">Watch on YouTube</button>
-          </a>
-        `;
-        videosContainer.appendChild(card);
-      });
-  })
-  .catch(error => {
-    console.error("YouTube API error:", error);
-    document.querySelector(".videos").innerHTML += "<p>Unable to load recent videos.</p>";
-  });
+    root.classList.toggle("light-mode");
+
+    if (root.classList.contains("light-mode")) {
+      btn.textContent = "☀️";
+      localStorage.setItem("theme", "light");
+    } else {
+      btn.textContent = "🌙";
+      localStorage.setItem("theme", "dark");
+    }
+  }
+
+  // YouTube API integration
+  const apiKey = "AIzaSyB8xKr62hw3vfJAaxxI1JmU-g0zg689TVI";
+  const channelId = "UCZeRYs-IqPz9uXLvX-m_IZg";
+  const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=3`;
+
+  fetch(apiURL)
+    .then(response => response.json())
+    .then(data => {
+      const videosContainer = document.querySelector(".videos");
+
+      data.items
+        .filter(item => item.id.kind === "youtube#video")
+        .forEach(item => {
+          const videoID = item.id.videoId;
+          const embedURL = `https://www.youtube.com/embed/${videoID}`;
+          const title = item.snippet.title;
+
+          const loadingCard = document.getElementById("latest-video-card");
+          if (loadingCard) loadingCard.remove();
+
+          const card = document.createElement("div");
+          card.className = "video-card";
+          card.innerHTML = `
+            <h3>${title}</h3>
+            <iframe width="100%" height="200" src="${embedURL}" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe>
+            <br><br>
+            <a href="https://www.youtube.com/watch?v=${videoID}" target="_blank">
+              <button class="subscribe-btn">Watch on YouTube</button>
+            </a>
+          `;
+          videosContainer.appendChild(card);
+        });
+    })
+    .catch(error => {
+      console.error("YouTube API error:", error);
+      document.querySelector(".videos").innerHTML += "<p>Unable to load recent videos.</p>";
+    });
+</script>
+
+
 </script>
 </body>
 </html>
