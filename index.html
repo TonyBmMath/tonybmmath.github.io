@@ -63,6 +63,18 @@
       display: flex;
       justify-content: center;
     }
+	
+	@media (max-width: 768px) {
+  .videos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
 
     .video-card {
       background: var(--card-bg);
