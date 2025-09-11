@@ -296,7 +296,7 @@
   // YouTube API integration
   const apiKey = "AIzaSyB8xKr62hw3vfJAaxxI1JmU-g0zg689TVI";
   const channelId = "UCZeRYs-IqPz9uXLvX-m_IZg";
-  const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=3`;
+  const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=5`;
 
   fetch(apiURL)
     .then(response => response.json())
