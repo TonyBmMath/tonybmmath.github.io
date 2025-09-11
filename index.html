@@ -123,6 +123,28 @@
       z-index: 1000;
       font-family: 'Capybara', cursive, sans-serif;
     }
+	
+	  .share-btn {
+      position: fixed;
+      top: 20px;
+      right: 80px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 1000;
+      font-family: 'Capybara', cursive, sans-serif;
+    }
+	
+	.share-btn:hover {
+	transform: scale(1.05);
+	}
+	
+	.toggle-btn:hover {
+	transform: scale(1.05);
+	}
 
     .git-section h2, .downloads h2 {
       margin-bottom: 10px;
@@ -174,7 +196,12 @@
 <body>
 
 <button class="toggle-btn" onclick="toggleTheme()" id="themeToggleBtn">🌙</button>
-
+<button class="share-btn" onclick="
+  alert('Share this webpage: tonybmmath.github.io');
+  navigator.clipboard.writeText('https://tonybmmath.github.io');
+">
+  Share
+</button>
 <header>
   <h1>Learn Math with Tony BM</h1>
   <p>The Most Exciting Way to Learn Math! 🎉📚</p>
@@ -259,7 +286,7 @@
       <a href="https://github.com/TonyBmMath/Pwsh-GUI-Calculator/releases/download/maincalc/calc.ps1" download>Download .ps1</a>
     </li>
     <li><a href="https://github.com/TonyBmMath/TTS-Generator/releases/download/maintts/tts.vbs" download>🔊 Text-to-Speech Script (.vbs)</a></li>
-    <li><a href="https://github.com/TonyBmMath/Maze-Generator/releases/download/mazegenerator/main.html" download>🌀 Maze Generating Script (.html)</a></li>
+    <li><a href="https://github.com/TonyBmMath/Maze-Generator/releases/download/mazegenerator/main.html" download>🌀 Maze Generating Script (.html)</a> | <a href="/mazegenerator" target="_blank">Direct Visit</a></li>
   </ul>
 </section>
 <script>
