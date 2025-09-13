@@ -192,9 +192,62 @@
       color: var(--text-color);
       border-left: 5px solid var(--ref-border);
     }
+	
+	/* Navbar container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+/* Navigation menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each nav item */
+.nav-menu li {
+  margin: 0 15px;
+}
+
+/* Nav links */
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-menu a:hover {
+  color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
   </style>
 </head>
 <body>
+<nav class="navbar">
+	<a href="/">
+		<img src="/TonyBm.png" style="height: 40px; border-radius: 8px; display: block;">
+	</a>
+  <ul class="nav-menu">
+    <li><a href="https://www.youtube.com/@LearnMathwithTonyBM">Youtube</a></li>
+    <li><a href="https://facebook.com/learnmathwithtonybm">Facebook</a></li>
+    <li><a href="https://classroom.google.com/c/NzgyNjIzNzA1MTYy?cjc=pou4ig4b">Google Classroom</a></li>
+    <li><a href="https://github.com/TonyBmMath">Github</a></li>
+  </ul>
+</nav>
 
 <button class="toggle-btn" onclick="toggleTheme()" id="themeToggleBtn">🌙</button>
 <button class="share-btn" onclick="
