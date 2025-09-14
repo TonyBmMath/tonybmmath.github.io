@@ -17,3 +17,4 @@ Webpage logs
 ```
 Image:
 <img width="2187" height="1256" alt="image" src="https://github.com/user-attachments/assets/7def30c6-9159-4c27-a8d2-e2a1722cbea0" />
+Latest vids auto loads!!!
