@@ -15,3 +15,5 @@ Webpage logs
 29/8 Added recent videos
 30/8 Added a dark/light mode toggle that shows the icon for each mode
 ```
+Image:
+<img width="2187" height="1256" alt="image" src="https://github.com/user-attachments/assets/7def30c6-9159-4c27-a8d2-e2a1722cbea0" />
