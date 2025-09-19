@@ -340,7 +340,7 @@
   <p id="refMessage"></p>
 
   <a href="https://www.youtube.com/@LearnMathwithTonyBM" target="_blank">
-    <button class="subscribe-btn">Subscribe on YouTube</button>
+    <button class="subscribe-btn" id="yt-btn">Subscribe on YouTube</button>
   </a>
 
   <br><br>
@@ -487,6 +487,25 @@
     });
 </script>
 
+<script>
+const apiURL2 = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channelId}&key=${apiKey}`;
+
+fetch(apiURL2)
+  .then(response => response.json())
+  .then(data => {
+    const subCount = data.items[0].statistics.subscriberCount;
+    const btn = document.getElementById("yt-btn");
+    if (btn) {
+      btn.innerHTML = `Subscribe to YouTube • ${subCount} subscribers`;
+    }
+  })
+  .catch(error => {
+    console.error("Error fetching subscriber count:", error);
+    const btn = document.getElementById("yt-btn");
+    if (btn) {
+      btn.innerHTML = `Subscribe to YouTube`;
+    }
+  });
 
 </script>
 </body>
