@@ -383,7 +383,9 @@
     <li>🔭 I’m currently working on batch scripts</li>
     <li>🌱 I’m currently learning PowerShell scripts</li>
   </ul>
-
+  <h6>Github stats</h6>
+  <img id="stats" alt="GitHub Stats">
+  <img id="streak" alt="GitHub Streak">
   <h3>My Projects</h3>
   <table>
     <tr>
@@ -509,5 +511,29 @@ fetch(apiURL2)
   });
 
 </script>
+
+  <script>
+    function getTheme() {
+      return document.body.classList.contains('light-mode') ? 'light' : 'dark';
+    }
+
+    function updateWidgets() {
+      const theme = getTheme();
+      document.getElementById('stats').src =
+        `https://github-readme-stats.vercel.app/api?username=tonybmmath&show_icons=true&theme=${theme}`;
+      document.getElementById('streak').src =
+        `https://github-readme-streak-stats.herokuapp.com/?user=tonybmmath&theme=${theme}`;
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      document.body.classList.toggle('dark-mode');
+      updateWidgets();
+    }
+
+    // Initial load
+    updateWidgets();
+  </script>
+
 </body>
 </html>
