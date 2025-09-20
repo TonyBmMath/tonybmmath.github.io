@@ -494,13 +494,14 @@ fetch(apiURL2)
   .then(response => response.json())
   .then(data => {
     const subCount = data.items[0].statistics.subscriberCount;
+	const viewCount = data.items[0].statistics.viewCount;
     const btn = document.getElementById("yt-btn");
     if (btn) {
-      btn.innerHTML = `Subscribe to YouTube • ${subCount} subscribers`;
+      btn.innerHTML = `Subscribe to YouTube • ${subCount} subscribers • ${viewCount} total channel views`;
     }
   })
   .catch(error => {
-    console.error("Error fetching subscriber count:", error);
+    console.error("Error fetching subscriber & view count:", error);
     const btn = document.getElementById("yt-btn");
     if (btn) {
       btn.innerHTML = `Subscribe to YouTube`;
