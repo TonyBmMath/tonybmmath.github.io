@@ -110,7 +110,7 @@
   </style>
 </head>
 <body>
-  <button class="mode-toggle" onclick="toggleMode()" id="modeIcon">🌞</button>
+  <button class="mode-toggle" onclick="toggleMode()" id="modeIcon">🌙</button>
 
   <h1>Learning Resources</h1>
   <h4 style="color: green;">Note: Right click and click "Save link as" to download the file. all files are PDF files and you can use edge/chrome to view them</h4>
@@ -164,7 +164,7 @@ function toggleMode() {
   const root = document.documentElement;
   const icon = document.getElementById('modeIcon');
   root.classList.toggle('light');
-  icon.textContent = root.classList.contains('light') ? '🌙' : '🌞';
+  icon.textContent = root.classList.contains('light') ? '🌞' : '🌙';
 }
 
     window.onload = () => {
