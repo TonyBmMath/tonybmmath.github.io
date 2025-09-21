@@ -2,106 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Learning resources</title>
+  <title>Learning Resources</title>
   <style>
-@font-face {
-  font-family: 'Capybara';
-  src: url('/capybara.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+    @font-face {
+      font-family: 'Capybara';
+      src: url('/capybara.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-:root {
-  --bg-color: #121212;
-  --text-color: #f0f0f0;
-  --accent-color: #00bcd4;
-  --section-bg: #1e1e1e;
-  --link-hover: #ff9800;
-}
+    :root {
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --accent-color: #00bcd4;
+      --section-bg: #1e1e1e;
+      --link-hover: #ff9800;
+    }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: 'Capybara', 'Comic Sans MS', cursive, sans-serif;
-  line-height: 1.6;
-  padding: 40px;
-}
+    :root.light {
+      --bg-color: #f0f0f0;
+      --text-color: #121212;
+      --accent-color: #0077cc;
+      --section-bg: #ffffff;
+      --link-hover: #ff5722;
+    }
 
-/* Section titles */
-h2 {
-  color: var(--accent-color);
-  font-size: 1.8em;
-  margin-bottom: 10px;
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 5px;
-}
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Capybara', 'Comic Sans MS', cursive, sans-serif;
+      line-height: 1.6;
+      padding: 40px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-h3 {
-  color: var(--accent-color);
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 5px;
-}
+    h1 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: var(--accent-color);
+    }
 
-/* Ordered lists */
-ol {
-  background-color: var(--section-bg);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  margin-bottom: 40px;
-}
+    h2 {
+      font-size: 1.5em;
+      color: var(--accent-color);
+      margin: 20px 0 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--section-bg);
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
 
-/* List items */
-li {
-  margin: 10px 0;
-  font-size: 1.1em;
-}
+    h2:hover {
+      background-color: #1a1a1a;
+    }
 
-/* Links */
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+    .arrow {
+      font-size: 1.2em;
+      margin-left: 10px;
+    }
 
-a:hover {
-  color: var(--link-hover);
-  text-decoration: underline;
-}
+    .collapsible {
+      display: none;
+      background-color: var(--section-bg);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+    }
 
+    li {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    .mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: var(--accent-color);
+      transition: color 0.3s ease;
+    }
+
+    .mode-toggle:hover {
+      color: var(--link-hover);
+    }
   </style>
 </head>
 <body>
-<h1>Learning resources</h1>
-<h2>Arthrimetic</h2>
-<ol>
-  <li><a href="addition-and-subtraction.pdf">Addition &amp; Subtraction Basics</a></li>
-  <li><a href="numbers-to-1000.pdf">Counting to 1000</a></li>
-</ol>
-<h3>Multiplication &amp; Divsion</h3>
-<ol>
-  <li value="3"><a href="multiplication-division-9.pdf">Multiplication &amp; Division by 9</a></li>
-  <li><a href="multiplication-division-components.pdf">Parts of Multiplication &amp; Division</a></li>
-  <li><a href="multiplication-divsion-2-and-5.pdf">Multiply &amp; Divide by 2 and 5</a></li>
-  <li><a href="multiplication-divsion-3-and-4.pdf">Multiply &amp; Divide by 3 and 4</a></li>
-  <li><a href="multiplication-divsion-6.pdf">Multiply &amp; Divide by 6</a></li>
-  <li><a href="multiplication-divsion-7.pdf">Multiply &amp; Divide by 7</a></li>
-  <li><a href="multiplication-divsion-8.pdf">Multiply &amp; Divide by 8</a></li>
-  <li><a href="divison-exact-and-remainder.pdf">Division: Exact &amp; Remainders</a></li>
-  <li><a href="divsion-two-digit-by-1-digit.pdf">2-Digit ÷ 1-Digit Division</a></li>
-</ol>
-<h2>Geometry</h2>
-<ol>
-  <li value="12"><a href="angles.pdf">Understanding Angles</a></li>
-  <li><a href="circles.pdf">Exploring Circles</a></li>
-  <li><a href="cubes-and-rectangular-prisms.pdf">3D Shapes: Cubes &amp; Prisms</a></li>
-  <li><a href="geometry-and-measurement.pdf">Geometry &amp; Measurement</a></li>
-  <li><a href="middle-in-geometry.pdf">Midpoints in Geometry</a></li>
-  <li><a href="triangles-and-quadrilaterals.pdf">Triangles &amp; Quadrilaterals</a></li>
-</ol>
+  <button class="mode-toggle" onclick="toggleMode()" id="modeIcon">🌞</button>
+
+  <h1>Learning Resources</h1>
+
+  <h2 onclick="toggleSection('arithmetic', this)">
+    Arithmetic <span class="arrow">▼</span>
+  </h2>
+  <ol id="arithmetic" class="collapsible">
+    <li><a href="addition-and-subtraction.pdf">Addition &amp; Subtraction Basics</a></li>
+    <li><a href="numbers-to-1000.pdf">Counting to 1000</a></li>
+  </ol>
+
+  <h2 onclick="toggleSection('multiplication', this)">
+    Multiplication &amp; Division <span class="arrow">▼</span>
+  </h2>
+  <ol id="multiplication" class="collapsible">
+    <li value="3"><a href="multiplication-division-9.pdf">Multiplication &amp; Division by 9</a></li>
+    <li><a href="multiplication-division-components.pdf">Parts of Multiplication &amp; Division</a></li>
+    <li><a href="multiplication-divsion-2-and-5.pdf">Multiply &amp; Divide by 2 and 5</a></li>
+    <li><a href="multiplication-divsion-3-and-4.pdf">Multiply &amp; Divide by 3 and 4</a></li>
+    <li><a href="multiplication-divsion-6.pdf">Multiply &amp; Divide by 6</a></li>
+    <li><a href="multiplication-divsion-7.pdf">Multiply &amp; Divide by 7</a></li>
+    <li><a href="multiplication-divsion-8.pdf">Multiply &amp; Divide by 8</a></li>
+    <li><a href="divison-exact-and-remainder.pdf">Division: Exact &amp; Remainders</a></li>
+    <li><a href="divsion-two-digit-by-1-digit.pdf">2-Digit ÷ 1-Digit Division</a></li>
+  </ol>
+
+  <h2 onclick="toggleSection('geometry', this)">
+    Geometry <span class="arrow">▼</span>
+  </h2>
+  <ol id="geometry" class="collapsible">
+    <li value="12"><a href="angles.pdf">Understanding Angles</a></li>
+    <li><a href="circles.pdf">Exploring Circles</a></li>
+    <li><a href="cubes-and-rectangular-prisms.pdf">3D Shapes: Cubes &amp; Prisms</a></li>
+    <li><a href="geometry-and-measurement.pdf">Geometry &amp; Measurement</a></li>
+    <li><a href="middle-in-geometry.pdf">Midpoints in Geometry</a></li>
+    <li><a href="triangles-and-quadrilaterals.pdf">Triangles &amp; Quadrilaterals</a></li>
+  </ol>
+
+  <script>
+    function toggleSection(id, header) {
+      const section = document.getElementById(id);
+      const arrow = header.querySelector('.arrow');
+      const isVisible = section.style.display === "block";
+
+      section.style.display = isVisible ? "none" : "block";
+      arrow.textContent = isVisible ? "▼" : "▲";
+    }
+
+function toggleMode() {
+  const root = document.documentElement;
+  const icon = document.getElementById('modeIcon');
+  root.classList.toggle('light');
+  icon.textContent = root.classList.contains('light') ? '🌙' : '🌞';
+}
+
+    window.onload = () => {
+      document.querySelectorAll('.collapsible').forEach(el => el.style.display = 'block');
+      document.querySelectorAll('.arrow').forEach(arrow => arrow.textContent = "▲");
+      document.getElementById('modeIcon').textContent = document.body.classList.contains('light') ? '🌙' : '🌞';
+    };
+  </script>
 </body>
 </html>
