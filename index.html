@@ -366,8 +366,10 @@
   <a href="https://github.com/tonybmmath" target="_blank">
     <button class="github-btn">Visit GitHub</button>
   </a>
+  <a href="learning-resorces" target="_blank">
+    <button class="learning-btn">Download Math Resources📥</button>
+  </a>
 </section>
-
 <section class="videos" id="videos">
   <div class="video-card" id="latest-video-card">
     <h3>Latest Video</h3>
@@ -526,9 +528,9 @@ fetch(apiURL2)
     function updateWidgets() {
       const theme = getTheme();
       document.getElementById('stats').src =
-        `https://github-readme-stats.vercel.app/api?username=tonybmmath&show_icons=true&theme=${theme}`;
+        `https://github-readme-stats.vercel.app/api?username=tonybmmath&show_icons=true&theme=${theme}&icon_color=FF0000`;
       document.getElementById('streak').src =
-        `https://github-readme-streak-stats.herokuapp.com/?user=tonybmmath&theme=${theme}`;
+        `https://github-readme-streak-stats.herokuapp.com/?user=tonybmmath&theme=${theme}&icon_color=FF0000`;
     }
 
     // Initial load
