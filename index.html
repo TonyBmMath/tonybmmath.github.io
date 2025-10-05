@@ -7,220 +7,247 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <style>
-    @font-face {
-      font-family: 'Capybara';
-      src: url('/capybara.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
+@font-face {
+	font-family: 'Capybara';
+	src: url('/capybara.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
 
-    :root {
-      --bg-color: #121212;
-      --text-color: #f0f0f0;
-      --card-bg: #1e1e1e;
-      --section-bg: #1a1a1a;
-      --accent-color: #4285f4;
-      --button-bg: #ff0000;
-      --github-bg: #333;
-      --facebook-bg: #1877f2;
-      --classroom-bg: #f4b400;
-      --ref-border: #00796b;
-    }
+:root {
+	--bg-color: #121212;
+	--text-color: #f0f0f0;
+	--card-bg: #1e1e1e;
+	--section-bg: #1a1a1a;
+	--accent-color: #4285f4;
+	--button-bg: #ff0000;
+	--github-bg: #333;
+	--facebook-bg: #1877f2;
+	--classroom-bg: #f4b400;
+	--ref-border: #00796b;
+}
 
-    .light-mode {
-      --bg-color: #f0f4f8;
-      --text-color: #333;
-      --card-bg: white;
-      --section-bg: #ffffff;
-      --ref-border: #00acc1;
-    }
+.light-mode {
+	--bg-color: #f0f4f8;
+	--text-color: #333;
+	--card-bg: white;
+	--section-bg: #ffffff;
+	--ref-border: #00acc1;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Capybara', cursive, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: background-color 0.3s, color 0.3s;
-    }
+body {
+	margin: 0;
+	font-family: 'Capybara', cursive, sans-serif;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	transition: background-color 0.3s, color 0.3s;
+}
 
-    header {
-      background-color: var(--accent-color);
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+header {
+	background-color: var(--accent-color);
+	color: white;
+	padding: 20px;
+	text-align: center;
+}
 
-    .intro,
+.intro,
     .videos,
     .git-section,
     .downloads {
-      background-color: var(--section-bg);
-      padding: 40px;
-      text-align: center;
-    }
-
-    .videos {
-      display: flex;
-      justify-content: center;
-    }
-	
-	@media (max-width: 1065px) {
-  .videos {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .video-card {
-    width: 90%;
-    margin-bottom: 20px;
-  }
+	background-color: var(--section-bg);
+	padding: 40px;
+	text-align: center;
 }
 
-    .video-card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      width: 300px;
-      padding: 20px;
-      text-align: center;
-    }
+.videos {
+	display: flex;
+	justify-content: center;
+}
 
-    .subscribe-btn, .facebook-btn, .github-btn, .classroom-btn, .learning-btn {
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 10px;
-      font-family: 'Capybara', cursive, sans-serif;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
-    }
+@media (max-width: 1065px) {
+	.videos {
+		flex-direction: column;
+		align-items: center;
+	}
 
-    .subscribe-btn { background-color: var(--button-bg); }
-    .facebook-btn { background-color: var(--facebook-bg); }
-    .github-btn { background-color: var(--github-bg); }
-    .classroom-btn { background-color: var(--classroom-bg); }
+	.video-card {
+		width: 90%;
+		margin-bottom: 20px;
+	}
+}
 
-    .subscribe-btn:hover,
+.video-card {
+	background: var(--card-bg);
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+	width: 300px;
+	padding: 20px;
+	text-align: center;
+}
+
+.subscribe-btn, .facebook-btn, .github-btn, .classroom-btn, .learning-btn {
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 6px;
+	font-size: 16px;
+	cursor: pointer;
+	margin-top: 10px;
+	font-family: 'Capybara', cursive, sans-serif;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+	transition: transform 0.2s ease;
+}
+
+.subscribe-btn {
+	background-color: var(--button-bg);
+}
+
+.facebook-btn {
+	background-color: var(--facebook-bg);
+}
+
+.github-btn {
+	background-color: var(--github-bg);
+}
+
+.classroom-btn {
+	background-color: var(--classroom-bg);
+}
+
+.subscribe-btn:hover,
     .facebook-btn:hover,
     .github-btn:hover,
     .classroom-btn:hover,
-    .learning-btn:hover	{
-      transform: scale(1.05);
-    }
-	
-	.learning-btn {
-		background-color: orange;
-	}
+    .learning-btn:hover {
+	transform: scale(1.05);
+}
 
-    .toggle-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #333;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 6px;
-      cursor: pointer;
-      z-index: 1000;
-      font-family: 'Capybara', cursive, sans-serif;
-    }
-	
-	  .share-btn {
-      position: fixed;
-      top: 20px;
-      right: 80px;
-      background-color: #3f6ee0;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 6px;
-      cursor: pointer;
-      z-index: 1000;
-      font-family: 'Capybara', cursive, sans-serif;
-    }
-	
-	.share-btn:hover {
+.learning-btn {
+	background-color: orange;
+}
+
+.toggle-btn {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	background-color: #333;
+	color: white;
+	border: none;
+	padding: 10px 15px;
+	border-radius: 6px;
+	cursor: pointer;
+	z-index: 1000;
+	font-family: 'Capybara', cursive, sans-serif;
+}
+
+.share-btn {
+	position: fixed;
+	top: 20px;
+	right: 80px;
+	background-color: #3f6ee0;
+	color: white;
+	border: none;
+	padding: 10px 15px;
+	border-radius: 6px;
+	cursor: pointer;
+	z-index: 1000;
+	font-family: 'Capybara', cursive, sans-serif;
+}
+
+.share-btn:hover {
 	transform: scale(1.05);
 	background-color: #1f3f8f;
-	}
-	
-	.toggle-btn:hover {
-	transform: scale(1.05);
-	}
-
-    .git-section h2, .downloads h2 {
-      margin-bottom: 10px;
-    }
-
-    .git-section ul, .downloads ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .git-section ul li, .downloads ul li {
-      margin: 10px 0;
-    }
-
-    table {
-      width: 90%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      font-family: 'Capybara', cursive, sans-serif;
-    }
-
-    th, td {
-      border: 1px solid #555;
-      padding: 12px;
-      text-align: center;
-    }
-
-    a {
-      color: #00bfff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-	  color: #0075ff;
-    }
-
-    #refMessage {
-      display: none;
-      font-size: 20px;
-      margin-top: 20px;
-      padding: 15px;
-      background-color: var(--card-bg);
-      color: var(--text-color);
-      border-left: 5px solid var(--ref-border);
-    }
-	
-	/* Navbar container */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #4285f4;
-  padding: 10px 20px;
 }
+
+.toggle-btn:hover {
+	transform: scale(1.05);
+}
+
+.git-section h2, .downloads h2 {
+	margin-bottom: 10px;
+}
+
+.git-section ul, .downloads ul {
+	list-style: none;
+	padding: 0;
+}
+
+.git-section ul li, .downloads ul li {
+	margin: 10px 0;
+}
+
+table {
+	width: 90%;
+	margin: 20px auto;
+	border-collapse: collapse;
+	font-family: 'Capybara', cursive, sans-serif;
+}
+
+th, td {
+	border: 1px solid #555;
+	padding: 12px;
+	text-align: center;
+}
+
+a {
+	color: #00bfff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #0075ff;
+}
+
+#refMessage {
+	display: none;
+	font-size: 20px;
+	margin-top: 20px;
+	padding: 15px;
+	background-color: var(--card-bg);
+	color: var(--text-color);
+	border-left: 5px solid var(--ref-border);
+}
+	
+	
+
+/* Navbar container */
+
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #4285f4;
+	padding: 10px 20px;
+}
+
+
 
 /* Navigation menu */
+
+
 .nav-menu {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
 }
+
+
 
 /* Each nav item */
+
+
 .nav-menu li {
-  margin: 0 15px;
+	margin: 0 15px;
 }
 
+
+
 /* Nav links */
+
+
 .ytnav {
 	color: red;
 }
@@ -237,26 +264,30 @@
 	color: #333
 }
 
+
+
 /* Hover effect */
+
+
 .nav-menu a:hover {
-  color: #fff
+	color: #fff
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    display: none;
-  }
+	.navbar {
+		display: none;
+	}
 }
 
 .nav-menu svg {
-  width: 24px;
-  height: 24px;
+	width: 24px;
+	height: 24px;
 }
 
 .logo {
-  position: fixed;
-  top: 20px;
-  left: 20px;
+	position: fixed;
+	top: 20px;
+	left: 20px;
 }
   </style>
 </head>
