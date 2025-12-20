@@ -141,6 +141,14 @@ header {
 	background-color: orange;
 }
 
+.games-btn {
+	background-color: yellow;
+}
+
+.games-btn:hover {
+	transform: scale(1.05);
+}
+
 .toggle-btn {
 	position: fixed;
 	top: 20px;
@@ -320,8 +328,8 @@ a:hover {
       bottom: 30px;
       font-size: 17px;
       opacity: 0;
-      transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
     }
+      transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
 
     #toast.show {
       visibility: visible;
@@ -457,6 +465,11 @@ navigator.clipboard.writeText('https://tonybmmath.github.io').then(() => {
   <br><br>
     <a href="math-quiz" target="_blank">
     <button class="learning-btn">Play quiz game 🎮</button>
+  </a>
+  
+    <br><br>
+    <a href="/games" target="_blank">
+    <button class="games-btn">My games 🎮</button>
   </a>
 </section>
 <section class="videos" id="videos">
